@@ -169,7 +169,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mozzi97.github.io/2019/12/07/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/">
+    <link itemprop="mainEntityOfPage" href="https://mozzi97.github.io/2019/12/07/%E5%85%B3%E4%BA%8E%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2%E5%92%8CnexT%E4%B8%BB%E9%A2%98%E9%81%87%E8%A7%81%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -183,7 +183,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/07/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/" class="post-title-link" itemprop="url">测试文章</a>
+            <a href="/2019/12/07/%E5%85%B3%E4%BA%8E%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2%E5%92%8CnexT%E4%B8%BB%E9%A2%98%E9%81%87%E8%A7%81%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">关于部署hexo博客和nexT主题遇见的小问题</a>
         </h1>
 
         <div class="post-meta">
@@ -192,8 +192,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-12-07 16:40:29" itemprop="dateCreated datePublished" datetime="2019-12-07T16:40:29+08:00">2019-12-07</time>
+              <time title="创建时间：2019-12-07 16:40:29 / 修改时间：21:46:50" itemprop="dateCreated datePublished" datetime="2019-12-07T16:40:29+08:00">2019-12-07</time>
             </span>
 
           
@@ -207,7 +208,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <hr>
+<h1 id="安装npm中国镜像"><a href="#安装npm中国镜像" class="headerlink" title="安装npm中国镜像"></a>安装npm中国镜像</h1><p>&emsp;&emsp;众所周知的一些原因，npm在中国的下载速度非常之慢，这里可以下载npm的某宝镜像来解放限速。打开terminal执行以下指令即可。</p>
+<p><code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code></p>
+<br/>
+
+<hr>
+<h1 id="更改默认作者姓名"><a href="#更改默认作者姓名" class="headerlink" title="更改默认作者姓名"></a>更改默认作者姓名</h1><p>&emsp;&emsp; 进入blog的配置文件（此处为_config.yml）后在site中更改<strong>author</strong>。需要注意的是更改完成后需要<strong>重启</strong>hexo serve。</p>
+<p><code>hexo cl &amp;&amp; hexo g &amp;&amp; hexo s</code></p>
+
       
     </div>
 
@@ -292,6 +301,10 @@
           <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
