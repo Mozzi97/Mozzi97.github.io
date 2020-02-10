@@ -46,17 +46,20 @@
   };
 </script>
 
-  <meta name="description" content="前言&amp;emsp;&amp;emsp;感谢下述朋友给予我的各种帮助 友链列表   站名 链接    太一 starlite.me">
-<meta property="og:type" content="website">
-<meta property="og:title" content="友链">
-<meta property="og:url" content="https:&#x2F;&#x2F;mozzi97.github.io&#x2F;friendlink&#x2F;index.html">
+  <meta name="description" content="用递归遍历树来获得树的高度&amp;emsp;&amp;emsp;惭愧。看了这个算法居然看了半天没有看懂。重新复习了一下递归。 需要注意的是：  每层的ld、rd皆为不同。 return的值仅为一个数字，而非ld、rd。这个数字被传入上一层的ld、rd之中。">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="递归遍历二叉树来获得深度">
+<meta property="og:url" content="https:&#x2F;&#x2F;mozzi97.github.io&#x2F;2020&#x2F;02&#x2F;11&#x2F;%E9%80%92%E5%BD%92%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91%E6%9D%A5%E8%8E%B7%E5%BE%97%E6%B7%B1%E5%BA%A6&#x2F;index.html">
 <meta property="og:site_name" content="欢迎来到我的博客~">
-<meta property="og:description" content="前言&amp;emsp;&amp;emsp;感谢下述朋友给予我的各种帮助 友链列表   站名 链接    太一 starlite.me">
+<meta property="og:description" content="用递归遍历树来获得树的高度&amp;emsp;&amp;emsp;惭愧。看了这个算法居然看了半天没有看懂。重新复习了一下递归。 需要注意的是：  每层的ld、rd皆为不同。 return的值仅为一个数字，而非ld、rd。这个数字被传入上一层的ld、rd之中。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-10T18:46:30.115Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;mozzi97.github.io&#x2F;2020&#x2F;02&#x2F;11&#x2F;%E9%80%92%E5%BD%92%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91%E6%9D%A5%E8%8E%B7%E5%BE%97%E6%B7%B1%E5%BA%A6&#x2F;picture&#x2F;recursion.jpeg">
+<meta property="og:updated_time" content="2020-02-10T18:56:14.450Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;mozzi97.github.io&#x2F;2020&#x2F;02&#x2F;11&#x2F;%E9%80%92%E5%BD%92%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91%E6%9D%A5%E8%8E%B7%E5%BE%97%E6%B7%B1%E5%BA%A6&#x2F;picture&#x2F;recursion.jpeg">
 
-<link rel="canonical" href="https://mozzi97.github.io/friendlink/">
+<link rel="canonical" href="https://mozzi97.github.io/2020/02/11/%E9%80%92%E5%BD%92%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91%E6%9D%A5%E8%8E%B7%E5%BE%97%E6%B7%B1%E5%BA%A6/">
 
 
 <script id="page-configurations">
@@ -64,12 +67,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>友链 | 欢迎来到我的博客~
-  </title>
+  <title>递归遍历二叉树来获得深度 | 欢迎来到我的博客~</title>
   
 
 
@@ -164,57 +166,92 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
           <div class="content">
             
 
   <div class="posts-expand">
-    
-    
-    
-    <div class="post-block" lang="zh-CN">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mozzi97.github.io/2020/02/11/%E9%80%92%E5%BD%92%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91%E6%9D%A5%E8%8E%B7%E5%BE%97%E6%B7%B1%E5%BA%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Jinxiao Chen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="欢迎来到我的博客~">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          递归遍历二叉树来获得深度
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">友链
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2020-02-11 02:43:52 / 修改时间：02:56:14" itemprop="dateCreated datePublished" datetime="2020-02-11T02:43:52+08:00">2020-02-11</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="用递归遍历树来获得树的高度"><a href="#用递归遍历树来获得树的高度" class="headerlink" title="用递归遍历树来获得树的高度"></a>用递归遍历树来获得树的高度</h1><p>&emsp;&emsp;惭愧。看了这个算法居然看了半天没有看懂。重新复习了一下递归。</p>
+<p>需要注意的是：</p>
+<ol>
+<li>每层的ld、rd皆为不同。</li>
+<li>return的值仅为一个数字，而非ld、rd。这个数字被传入上一层的ld、rd之中。</li>
+</ol>
+<div align=center>
+
+<p><img src="./picture/recursion.jpeg" alt="recursion"></p>
+</div>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/03/%E5%85%B3%E4%BA%8E%E7%94%B5%E6%A2%AF%E7%AE%97%E6%B3%95%E7%9A%84%E5%B0%8F%E6%80%9D%E8%80%83/" rel="prev" title="关于电梯算法的小思考">
+      <i class="fa fa-chevron-left"></i> 关于电梯算法的小思考
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>&emsp;&emsp;感谢下述朋友给予我的各种帮助</p>
-<h4 id="友链列表"><a href="#友链列表" class="headerlink" title="友链列表"></a>友链列表</h4><table>
-<thead>
-<tr>
-<th align="center">站名</th>
-<th align="center">链接</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">太一</td>
-<td align="center">starlite.me</td>
-</tr>
-</tbody></table>
-
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
   </div>
 
 
@@ -266,7 +303,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#友链列表"><span class="nav-number">2.</span> <span class="nav-text">友链列表</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#用递归遍历树来获得树的高度"><span class="nav-number">1.</span> <span class="nav-text">用递归遍历树来获得树的高度</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
