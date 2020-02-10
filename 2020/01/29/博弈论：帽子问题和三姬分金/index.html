@@ -46,18 +46,17 @@
   };
 </script>
 
-  <meta name="description" content="箭头函数1var a1 &amp;#x3D; function () &amp;#123;2	return 0;3&amp;#125;45const a1 &amp;#x3D; () &amp;#x3D;&amp;gt; &amp;#123;return 0&amp;#125;;     ---  立即执行函数&amp;emsp;&amp;emsp;函数定义完，立即被调用。立即执行函数往往只会被执行一次。 无参数的立即执行函数： 1(function()&amp;#123; 2">
-<meta name="keywords" content="研究">
+  <meta name="description" content="帽子问题&amp;emsp;&amp;emsp;最近因为武汉肺炎的问题闲赋在家，又把金光布袋戏的九龙变看了一遍。编剧三弦惊为天人，九龙变能饱受好评三弦功不可没。在九龙变的第24集，俏如来和神蛊温皇的辩论中，提到了华罗庚的帽子问题。我本人对博弈论了解甚少，所以就帽子问题进行了自己的分析。 &amp;emsp;&amp;emsp;温皇阐述的游戏规则为下：国王对三个囚犯说，我有三张红纸和两张白纸，现在各往你们头上贴一张，你们若是能各自">
 <meta property="og:type" content="article">
-<meta property="og:title" content="箭头函数">
-<meta property="og:url" content="https:&#x2F;&#x2F;mozzi97.github.io&#x2F;2019&#x2F;12&#x2F;15&#x2F;%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0&#x2F;index.html">
+<meta property="og:title" content="博弈论：帽子问题和三姬分金">
+<meta property="og:url" content="https:&#x2F;&#x2F;mozzi97.github.io&#x2F;2020&#x2F;01&#x2F;29&#x2F;%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%9A%E5%B8%BD%E5%AD%90%E9%97%AE%E9%A2%98%E5%92%8C%E4%B8%89%E5%A7%AC%E5%88%86%E9%87%91&#x2F;index.html">
 <meta property="og:site_name" content="欢迎来到我的博客~">
-<meta property="og:description" content="箭头函数1var a1 &amp;#x3D; function () &amp;#123;2	return 0;3&amp;#125;45const a1 &amp;#x3D; () &amp;#x3D;&amp;gt; &amp;#123;return 0&amp;#125;;     ---  立即执行函数&amp;emsp;&amp;emsp;函数定义完，立即被调用。立即执行函数往往只会被执行一次。 无参数的立即执行函数： 1(function()&amp;#123; 2">
+<meta property="og:description" content="帽子问题&amp;emsp;&amp;emsp;最近因为武汉肺炎的问题闲赋在家，又把金光布袋戏的九龙变看了一遍。编剧三弦惊为天人，九龙变能饱受好评三弦功不可没。在九龙变的第24集，俏如来和神蛊温皇的辩论中，提到了华罗庚的帽子问题。我本人对博弈论了解甚少，所以就帽子问题进行了自己的分析。 &amp;emsp;&amp;emsp;温皇阐述的游戏规则为下：国王对三个囚犯说，我有三张红纸和两张白纸，现在各往你们头上贴一张，你们若是能各自">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-18T06:44:36.935Z">
+<meta property="og:updated_time" content="2020-02-10T18:07:07.484Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://mozzi97.github.io/2019/12/15/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">
+<link rel="canonical" href="https://mozzi97.github.io/2020/01/29/%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%9A%E5%B8%BD%E5%AD%90%E9%97%AE%E9%A2%98%E5%92%8C%E4%B8%89%E5%A7%AC%E5%88%86%E9%87%91/">
 
 
 <script id="page-configurations">
@@ -69,7 +68,7 @@
   };
 </script>
 
-  <title>箭头函数 | 欢迎来到我的博客~</title>
+  <title>博弈论：帽子问题和三姬分金 | 欢迎来到我的博客~</title>
   
 
 
@@ -173,7 +172,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mozzi97.github.io/2019/12/15/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">
+    <link itemprop="mainEntityOfPage" href="https://mozzi97.github.io/2020/01/29/%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%9A%E5%B8%BD%E5%AD%90%E9%97%AE%E9%A2%98%E5%92%8C%E4%B8%89%E5%A7%AC%E5%88%86%E9%87%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -186,7 +185,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          箭头函数
+          博弈论：帽子问题和三姬分金
         </h1>
 
         <div class="post-meta">
@@ -196,14 +195,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-12-15 18:14:20" itemprop="dateCreated datePublished" datetime="2019-12-15T18:14:20+08:00">2019-12-15</time>
+              <time title="创建时间：2020-01-29 07:25:29" itemprop="dateCreated datePublished" datetime="2020-01-29T07:25:29+08:00">2020-01-29</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-18 14:44:36" itemprop="dateModified" datetime="2019-12-18T14:44:36+08:00">2019-12-18</time>
+                <time title="修改时间：2020-02-11 02:07:07" itemprop="dateModified" datetime="2020-02-11T02:07:07+08:00">2020-02-11</time>
               </span>
 
           
@@ -217,21 +216,27 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">var a1 &#x3D; function () &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">	return 0;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">const a1 &#x3D; () &#x3D;&gt; &#123;return 0&#125;;</span></pre></td></tr></table></figure>
-
-
-
+        <h1 id="帽子问题"><a href="#帽子问题" class="headerlink" title="帽子问题"></a>帽子问题</h1><p>&emsp;&emsp;最近因为武汉肺炎的问题闲赋在家，又把金光布袋戏的九龙变看了一遍。编剧三弦惊为天人，九龙变能饱受好评三弦功不可没。在九龙变的第24集，俏如来和神蛊温皇的辩论中，提到了华罗庚的帽子问题。我本人对博弈论了解甚少，所以就帽子问题进行了自己的分析。</p>
+<p>&emsp;&emsp;温皇阐述的游戏规则为下：国王对三个囚犯说，我有三张红纸和两张白纸，现在各往你们头上贴一张，你们若是能各自猜出贴纸的颜色则可以被释放。那么国王分别会贴什么纸呢？俏如来回答贴三张红纸。</p>
+<p>&emsp;&emsp;为什么俏如来能得出这样的答案呢？我们首先需要分析场上出现至少一张白纸的情况。</p>
+<ol>
+<li><p><strong><em>2白1红</em></strong></p>
+<p> 这个是最不可能的结果。我们要站在国王的角度来看这个问题，我们默认国王是不愿意让囚犯被释放的，所以他要避免颜色被猜出。当有两张白纸出现在场上时，必定有第三个人能毫不犹豫准确地猜出自己头上是红纸。所以不成立。</p>
+</li>
+<li><p><strong><em>2红1白</em></strong></p>
+<p> 当场上出现1红1白的情况下，只有两种可能性：2白1红、2红1白。如果有人能毫不犹豫地说出，说明他视野里有2白，也就是2白1红。根据1的分析，绝不可能出现2白1红，所以结果必然是2红1白。（因为没有人能果断报出2白1红，大家都在犹豫，这就断定了2白1红不存在。既然排除了1，那么答案必然是2红1白。）这也是国王必须避免的情形。</p>
+</li>
+</ol>
+<p>综上可述，国王必定贴3红。</p>
+<p>&emsp;&emsp;逻辑真是一种可以相通的趣事。这个“必然可能性排除法”我也同样用在数独里。例如至上到下3个九宫格，其中九宫格1和九宫格2的前两列存在数字3的可能性，那么九宫格3的数字3必然在第三列上。有时候不需要确切的数字来进行准确的推测，而是通过确切的可能性来推测下一个正确的可能性。</p>
 <br>
----
 
-<h1 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h1><p>&emsp;&emsp;函数定义完，立即被调用。立即执行函数往往只会被执行一次。</p>
-<p>无参数的立即执行函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">(function()&#123; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    alert(&quot;我是匿名函数&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;)();</span></pre></td></tr></table></figure>
-
-<p>有参数的立即执行函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">(function(a,b)&#123; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    console.log(a);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    console.log()b;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &#125;)(123,456);</span></pre></td></tr></table></figure>
-
-<p>console returns:<br>123<br>456</p>
+<h1 id="三姬分金"><a href="#三姬分金" class="headerlink" title="三姬分金"></a>三姬分金</h1><p>&emsp;&emsp;三个人分一百金币，但是要通过一个游戏。每个人依次提一个建议，未通过半数以上投票（半数以上不包括半数）就会被处死。如果A死了，B必死。所以无论如何B都会支持A的提议，A也知道结果是这样。所以A要想利益最大化，就拿一百。其余两个人拿0。</p>
+<p>&emsp;&emsp;在此基础上，增加一个大王M，大王觉得这个游戏有意思，在A之前提议。这时M已然明白如果自己被票死A会威胁B最终获得100枚金币，所以他会选择方案中对B和C示好，即M分98，A分0，B分1，C分1。B和C明白如果M被票死，就回到了第一个游戏模型，A一定会拿走所有的金币，但至少M还分给了自己1枚金币，所以综合考量一定会支持M的提议。</p>
+<p>&emsp;&emsp;这个模型比较理想化，而且是赌命，容不得半点意气。如果B和C串谋最后C反悔，B毫无办法。但现实生活中，这样的类似博弈无处不在，而且有很多背叛以后再修复关系反复经营的操作，成本越低串谋的几率就越大。</p>
+<p>&emsp;&emsp;其中M具有先发优势，能够最大程度为自己谋取利益，B和C代表低端群体，容易被打压和剥削，但同样能用小的利益换得同盟赢取支持。而A的位置处在夹层，并不是领导阶层的拉拢对象，虽有野心，但M虎视眈眈，只能伺机策反B和C然后废掉M取而代之获得先发优势。<br>这样的模型给了我几点小的启示，第一，如果为了最大的利益一定要去争取先发优势，制定规则的人才能攥住最大的利润。第二，身处A的位置，一方面要取得M的信任，另一方面需要完善的合约以牵制B和C，如果M心怀不轨，则可以联合B和C，不至于太被动，最后，身处低端，不能自甘堕落，争取缩短阶级差距，还要学会利用上层的角力为自己谋取利益充实自己的实力。</p>
+<p>&emsp;&emsp;如果M之前再多一个K，假设K被处死，那么M获得最大利益。为了避免出现这种情况，K在5人中必须获得3个支持票。那么除了K自己，剩下两票应该找谁呢？我认为还是得找B,C，而且开价必须比M要高。假设K被处死，M为了获利会联合B,C，B,C只能获得1枚金币的利益。如果处死M，那么A获利，B,C获利的可能性更小。所以说K为了胜出，必须和B,C合作，因为他们是利益链最下方的人，不管是K处死，M处死，他们得到的利益都是最晚最少的。（为什么不和M、A合作？因为他们是利益链的第二者第三者，或许他们愿意处死K来让自己利益最大化）所以和他们合作最方便，因为他们永远是被动的。</p>
+<p>&emsp;&emsp;以此类推，如果K之前再出现J加入游戏（6人），那么为了获取4票通过权，J也必须巴结A,B,C，因为他们是利益最低端，轮次太低，所以好巴结。引申到社会问题，当顶头上司出现竞争者的时候，下属员工或许有了站队结帮的权利，这时候你可以要求更多的利益。但是注意不要过于贪婪，如果你站队的上司倒了或者失去依附，那么你依旧回到被剥削的地位。</p>
 
     </div>
 
@@ -240,9 +245,6 @@
     
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E7%A0%94%E7%A9%B6/" rel="tag"># 研究</a>
-          </div>
 
         
 
@@ -250,12 +252,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/12/12/%E5%85%B3%E4%BA%8E%E7%A6%BB%E5%BF%83%E5%8A%9B%E4%B8%8E%E7%A7%91%E6%B0%8F%E5%8A%9B%E7%9A%84%E5%B0%8F%E7%A0%94%E7%A9%B6%208.02.14%20PM/" rel="prev" title="关于离心力与科氏力的小研究">
-      <i class="fa fa-chevron-left"></i> 关于离心力与科氏力的小研究
+    <a href="/2019/12/15/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/" rel="prev" title="箭头函数">
+      <i class="fa fa-chevron-left"></i> 箭头函数
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/01/29/%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%9A%E5%B8%BD%E5%AD%90%E9%97%AE%E9%A2%98%E5%92%8C%E4%B8%89%E5%A7%AC%E5%88%86%E9%87%91/" rel="next" title="博弈论：帽子问题和三姬分金">
-      博弈论：帽子问题和三姬分金 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/02/03/%E5%85%B3%E4%BA%8E%E7%94%B5%E6%A2%AF%E7%AE%97%E6%B3%95%E7%9A%84%E5%B0%8F%E6%80%9D%E8%80%83/" rel="next" title="关于电梯算法的小思考">
+      关于电梯算法的小思考 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -316,7 +318,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#箭头函数"><span class="nav-number">1.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#立即执行函数"><span class="nav-number">2.</span> <span class="nav-text">立即执行函数</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#帽子问题"><span class="nav-number">1.</span> <span class="nav-text">帽子问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三姬分金"><span class="nav-number">2.</span> <span class="nav-text">三姬分金</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
