@@ -40,21 +40,21 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
-  <meta name="description" content="电梯的算法&amp;emsp;&amp;emsp;近日乘坐家里的电梯时，忽然想研究一下电梯的运作算法。根据知乎上的大佬分析，每家电梯公司的算法不同。例如知乎用户董Charles的答案说过，电梯的运行方向变更一次，则钢丝绳折弯次数+1。控制上不考虑方向的话，长久来说会影响钢丝绳寿命。 &amp;emsp;&amp;emsp;这里我就不考虑损耗、节能问题，单纯地就用户需求来分析我家的电梯。  （超过一定时间）不运作的电梯停靠1楼。">
+  <meta name="description" content="电梯的算法&amp;emsp;&amp;emsp;近日乘坐家里的电梯时，忽然想研究一下电梯的运作算法。根据知乎上的大佬分析，每家电梯公司的算法不同。例如知乎用户董Charles的答案说过，电梯的运行方向变更一次，则钢丝绳折弯次数+1。控制上不考虑方向的话，长久来说会影响钢丝绳寿命。">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于电梯算法的小思考">
 <meta property="og:url" content="https:&#x2F;&#x2F;mozzi97.github.io&#x2F;2020&#x2F;02&#x2F;03&#x2F;%E5%85%B3%E4%BA%8E%E7%94%B5%E6%A2%AF%E7%AE%97%E6%B3%95%E7%9A%84%E5%B0%8F%E6%80%9D%E8%80%83&#x2F;index.html">
-<meta property="og:site_name" content="欢迎来到我的博客~">
-<meta property="og:description" content="电梯的算法&amp;emsp;&amp;emsp;近日乘坐家里的电梯时，忽然想研究一下电梯的运作算法。根据知乎上的大佬分析，每家电梯公司的算法不同。例如知乎用户董Charles的答案说过，电梯的运行方向变更一次，则钢丝绳折弯次数+1。控制上不考虑方向的话，长久来说会影响钢丝绳寿命。 &amp;emsp;&amp;emsp;这里我就不考虑损耗、节能问题，单纯地就用户需求来分析我家的电梯。  （超过一定时间）不运作的电梯停靠1楼。">
+<meta property="og:site_name" content="Mozzi的博客">
+<meta property="og:description" content="电梯的算法&amp;emsp;&amp;emsp;近日乘坐家里的电梯时，忽然想研究一下电梯的运作算法。根据知乎上的大佬分析，每家电梯公司的算法不同。例如知乎用户董Charles的答案说过，电梯的运行方向变更一次，则钢丝绳折弯次数+1。控制上不考虑方向的话，长久来说会影响钢丝绳寿命。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-10T18:34:03.063Z">
+<meta property="og:updated_time" content="2020-02-11T07:37:37.279Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://mozzi97.github.io/2020/02/03/%E5%85%B3%E4%BA%8E%E7%94%B5%E6%A2%AF%E7%AE%97%E6%B3%95%E7%9A%84%E5%B0%8F%E6%80%9D%E8%80%83/">
@@ -69,7 +69,7 @@
   };
 </script>
 
-  <title>关于电梯算法的小思考 | 欢迎来到我的博客~</title>
+  <title>关于电梯算法的小思考 | Mozzi的博客</title>
   
 
 
@@ -113,7 +113,7 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">欢迎来到我的博客~</span>
+        <span class="site-title">Mozzi的博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -137,6 +137,11 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
@@ -147,9 +152,34 @@
     <a href="/friendlink/" rel="section"><i class="fa fa-fw fa-link"></i>友链</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -178,11 +208,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Jinxiao Chen">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="随处可见的平凡人">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="欢迎来到我的博客~">
+      <meta itemprop="name" content="Mozzi的博客">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -203,7 +233,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-11 02:34:03" itemprop="dateModified" datetime="2020-02-11T02:34:03+08:00">2020-02-11</time>
+                <time title="修改时间：2020-02-11 15:37:37" itemprop="dateModified" datetime="2020-02-11T15:37:37+08:00">2020-02-11</time>
               </span>
 
           
@@ -218,6 +248,7 @@
 
       
         <h1 id="电梯的算法"><a href="#电梯的算法" class="headerlink" title="电梯的算法"></a>电梯的算法</h1><p>&emsp;&emsp;近日乘坐家里的电梯时，忽然想研究一下电梯的运作算法。根据知乎上的大佬分析，每家电梯公司的算法不同。例如知乎用户<em>董Charles</em>的答案说过，电梯的运行方向变更一次，则钢丝绳折弯次数+1。控制上不考虑方向的话，长久来说会影响钢丝绳寿命。</p>
+<a id="more"></a>
 <p>&emsp;&emsp;这里我就不考虑损耗、节能问题，单纯地就用户需求来分析我家的电梯。</p>
 <ol>
 <li>（超过一定时间）不运作的电梯停靠1楼。</li>
@@ -328,7 +359,7 @@
     <img class="site-author-image" itemprop="image" alt="Jinxiao Chen"
       src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Jinxiao Chen</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">随处可见的平凡人</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -340,11 +371,21 @@
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">标签</span>
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Mozzi97" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Mozzi97" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/2598081640/profile?topnav=1&wvr=6" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;2598081640&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+  </div>
 
 
 
@@ -391,6 +432,8 @@
   </div>
 
   
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
@@ -398,12 +441,16 @@
 <script src="/js/schemes/pisces.js"></script>
 <script src="/js/next-boot.js"></script>
 
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
 
 
   
 
 
 
+
+  <script src="/js/local-search.js"></script>
 
 
 

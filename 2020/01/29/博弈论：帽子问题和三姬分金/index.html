@@ -40,20 +40,21 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
-  <meta name="description" content="帽子问题&amp;emsp;&amp;emsp;最近因为武汉肺炎的问题闲赋在家，又把金光布袋戏的九龙变看了一遍。编剧三弦惊为天人，九龙变能饱受好评三弦功不可没。在九龙变的第24集，俏如来和神蛊温皇的辩论中，提到了华罗庚的帽子问题。我本人对博弈论了解甚少，所以就帽子问题进行了自己的分析。 &amp;emsp;&amp;emsp;温皇阐述的游戏规则为下：国王对三个囚犯说，我有三张红纸和两张白纸，现在各往你们头上贴一张，你们若是能各自">
+  <meta name="description" content="帽子问题&amp;emsp;&amp;emsp;最近因为武汉肺炎的问题闲赋在家，又把金光布袋戏的九龙变看了一遍。编剧三弦惊为天人，九龙变能饱受好评三弦功不可没。在九龙变的第24集，俏如来和神蛊温皇的辩论中，提到了华罗庚的帽子问题。我本人对博弈论了解甚少，所以就帽子问题进行了自己的分析。">
+<meta name="keywords" content="杂谈">
 <meta property="og:type" content="article">
 <meta property="og:title" content="博弈论：帽子问题和三姬分金">
 <meta property="og:url" content="https:&#x2F;&#x2F;mozzi97.github.io&#x2F;2020&#x2F;01&#x2F;29&#x2F;%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%9A%E5%B8%BD%E5%AD%90%E9%97%AE%E9%A2%98%E5%92%8C%E4%B8%89%E5%A7%AC%E5%88%86%E9%87%91&#x2F;index.html">
-<meta property="og:site_name" content="欢迎来到我的博客~">
-<meta property="og:description" content="帽子问题&amp;emsp;&amp;emsp;最近因为武汉肺炎的问题闲赋在家，又把金光布袋戏的九龙变看了一遍。编剧三弦惊为天人，九龙变能饱受好评三弦功不可没。在九龙变的第24集，俏如来和神蛊温皇的辩论中，提到了华罗庚的帽子问题。我本人对博弈论了解甚少，所以就帽子问题进行了自己的分析。 &amp;emsp;&amp;emsp;温皇阐述的游戏规则为下：国王对三个囚犯说，我有三张红纸和两张白纸，现在各往你们头上贴一张，你们若是能各自">
+<meta property="og:site_name" content="Mozzi的博客">
+<meta property="og:description" content="帽子问题&amp;emsp;&amp;emsp;最近因为武汉肺炎的问题闲赋在家，又把金光布袋戏的九龙变看了一遍。编剧三弦惊为天人，九龙变能饱受好评三弦功不可没。在九龙变的第24集，俏如来和神蛊温皇的辩论中，提到了华罗庚的帽子问题。我本人对博弈论了解甚少，所以就帽子问题进行了自己的分析。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-10T18:07:07.484Z">
+<meta property="og:updated_time" content="2020-02-11T07:38:07.644Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://mozzi97.github.io/2020/01/29/%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%9A%E5%B8%BD%E5%AD%90%E9%97%AE%E9%A2%98%E5%92%8C%E4%B8%89%E5%A7%AC%E5%88%86%E9%87%91/">
@@ -68,7 +69,7 @@
   };
 </script>
 
-  <title>博弈论：帽子问题和三姬分金 | 欢迎来到我的博客~</title>
+  <title>博弈论：帽子问题和三姬分金 | Mozzi的博客</title>
   
 
 
@@ -112,7 +113,7 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">欢迎来到我的博客~</span>
+        <span class="site-title">Mozzi的博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -136,6 +137,11 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
@@ -146,9 +152,34 @@
     <a href="/friendlink/" rel="section"><i class="fa fa-fw fa-link"></i>友链</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -177,11 +208,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Jinxiao Chen">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="随处可见的平凡人">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="欢迎来到我的博客~">
+      <meta itemprop="name" content="Mozzi的博客">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -202,7 +233,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-11 02:07:07" itemprop="dateModified" datetime="2020-02-11T02:07:07+08:00">2020-02-11</time>
+                <time title="修改时间：2020-02-11 15:38:07" itemprop="dateModified" datetime="2020-02-11T15:38:07+08:00">2020-02-11</time>
               </span>
 
           
@@ -217,6 +248,7 @@
 
       
         <h1 id="帽子问题"><a href="#帽子问题" class="headerlink" title="帽子问题"></a>帽子问题</h1><p>&emsp;&emsp;最近因为武汉肺炎的问题闲赋在家，又把金光布袋戏的九龙变看了一遍。编剧三弦惊为天人，九龙变能饱受好评三弦功不可没。在九龙变的第24集，俏如来和神蛊温皇的辩论中，提到了华罗庚的帽子问题。我本人对博弈论了解甚少，所以就帽子问题进行了自己的分析。</p>
+<a id="more"></a>
 <p>&emsp;&emsp;温皇阐述的游戏规则为下：国王对三个囚犯说，我有三张红纸和两张白纸，现在各往你们头上贴一张，你们若是能各自猜出贴纸的颜色则可以被释放。那么国王分别会贴什么纸呢？俏如来回答贴三张红纸。</p>
 <p>&emsp;&emsp;为什么俏如来能得出这样的答案呢？我们首先需要分析场上出现至少一张白纸的情况。</p>
 <ol>
@@ -245,6 +277,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9D%82%E8%B0%88/" rel="tag"># 杂谈</a>
+          </div>
 
         
 
@@ -327,7 +362,7 @@
     <img class="site-author-image" itemprop="image" alt="Jinxiao Chen"
       src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Jinxiao Chen</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">随处可见的平凡人</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -339,11 +374,21 @@
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">标签</span>
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Mozzi97" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Mozzi97" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/2598081640/profile?topnav=1&wvr=6" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;2598081640&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+  </div>
 
 
 
@@ -390,6 +435,8 @@
   </div>
 
   
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
@@ -397,12 +444,16 @@
 <script src="/js/schemes/pisces.js"></script>
 <script src="/js/next-boot.js"></script>
 
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
 
 
   
 
 
 
+
+  <script src="/js/local-search.js"></script>
 
 
 
