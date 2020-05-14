@@ -40,16 +40,18 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="欢迎来到我的博客~">
+  <meta name="description" content="随处可见的平凡人">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mozzi的博客">
 <meta property="og:url" content="https:&#x2F;&#x2F;mozzi97.github.io&#x2F;index.html">
-<meta property="og:site_name" content="欢迎来到我的博客~">
+<meta property="og:site_name" content="Mozzi的博客">
+<meta property="og:description" content="随处可见的平凡人">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 
@@ -65,7 +67,7 @@
   };
 </script>
 
-  <title>欢迎来到我的博客~</title>
+  <title>Mozzi的博客</title>
   
 
 
@@ -109,7 +111,7 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">欢迎来到我的博客~</span>
+        <span class="site-title">Mozzi的博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -133,6 +135,11 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
@@ -143,9 +150,34 @@
     <a href="/friendlink/" rel="section"><i class="fa fa-fw fa-link"></i>友链</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -169,21 +201,21 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mozzi97.github.io/2019/12/15/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">
+    <link itemprop="mainEntityOfPage" href="https://mozzi97.github.io/2020/02/11/%E9%80%92%E5%BD%92%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91%E6%9D%A5%E8%8E%B7%E5%BE%97%E6%B7%B1%E5%BA%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Jinxiao Chen">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="随处可见的平凡人">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="欢迎来到我的博客~">
+      <meta itemprop="name" content="Mozzi的博客">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/15/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">箭头函数</a>
+            <a href="/2020/02/11/%E9%80%92%E5%BD%92%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91%E6%9D%A5%E8%8E%B7%E5%BE%97%E6%B7%B1%E5%BA%A6/" class="post-title-link" itemprop="url">递归遍历二叉树来获得深度</a>
         </h1>
 
         <div class="post-meta">
@@ -192,16 +224,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-12-15 18:14:20" itemprop="dateCreated datePublished" datetime="2019-12-15T18:14:20+08:00">2019-12-15</time>
+              <time title="创建时间：2020-02-11 02:43:52 / 修改时间：15:38:18" itemprop="dateCreated datePublished" datetime="2020-02-11T02:43:52+08:00">2020-02-11</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-16 16:23:38" itemprop="dateModified" datetime="2019-12-16T16:23:38+08:00">2019-12-16</time>
-              </span>
 
           
 
@@ -214,19 +240,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h1><br>
----
-# 立即执行函数
-
-<p>&emsp;&emsp;函数定义完，立即被调用。立即执行函数往往只会被执行一次。</p>
-<p>无参数的立即执行函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">(function()&#123; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    alert(&quot;我是匿名函数&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;)();</span></pre></td></tr></table></figure>
-
-<p>有参数的立即执行函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">(function(a,b)&#123; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    console.log(a);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    console.log()b;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &#125;)(123,456);</span></pre></td></tr></table></figure>
-
-<p>console returns:<br>123<br>456</p>
-
+          <h1 id="用递归遍历树来获得树的高度"><a href="#用递归遍历树来获得树的高度" class="headerlink" title="用递归遍历树来获得树的高度"></a>用递归遍历树来获得树的高度</h1><p>&emsp;&emsp;惭愧。看了这个算法居然看了半天没有看懂。重新复习了一下递归。</p>
+<p>需要注意的是：</p>
+<ol>
+<li>每层的ld、rd皆为不同。</li>
+<li>return的值仅为一个数字，而非ld、rd。这个数字被传入上一层的ld、rd之中。</li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/11/%E9%80%92%E5%BD%92%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91%E6%9D%A5%E8%8E%B7%E5%BE%97%E6%B7%B1%E5%BA%A6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -245,21 +272,237 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mozzi97.github.io/2019/12/12/%E5%85%B3%E4%BA%8E%E7%A6%BB%E5%BF%83%E5%8A%9B%E4%B8%8E%E7%A7%91%E6%B0%8F%E5%8A%9B%E7%9A%84%E5%B0%8F%E7%A0%94%E7%A9%B6/">
+    <link itemprop="mainEntityOfPage" href="https://mozzi97.github.io/2020/02/03/%E5%85%B3%E4%BA%8E%E7%94%B5%E6%A2%AF%E7%AE%97%E6%B3%95%E7%9A%84%E5%B0%8F%E6%80%9D%E8%80%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Jinxiao Chen">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="随处可见的平凡人">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="欢迎来到我的博客~">
+      <meta itemprop="name" content="Mozzi的博客">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/12/%E5%85%B3%E4%BA%8E%E7%A6%BB%E5%BF%83%E5%8A%9B%E4%B8%8E%E7%A7%91%E6%B0%8F%E5%8A%9B%E7%9A%84%E5%B0%8F%E7%A0%94%E7%A9%B6/" class="post-title-link" itemprop="url">关于离心力与科氏力的小研究</a>
+            <a href="/2020/02/03/%E5%85%B3%E4%BA%8E%E7%94%B5%E6%A2%AF%E7%AE%97%E6%B3%95%E7%9A%84%E5%B0%8F%E6%80%9D%E8%80%83/" class="post-title-link" itemprop="url">关于电梯算法的小思考</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-03 04:18:29" itemprop="dateCreated datePublished" datetime="2020-02-03T04:18:29+08:00">2020-02-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-11 15:37:37" itemprop="dateModified" datetime="2020-02-11T15:37:37+08:00">2020-02-11</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="电梯的算法"><a href="#电梯的算法" class="headerlink" title="电梯的算法"></a>电梯的算法</h1><p>&emsp;&emsp;近日乘坐家里的电梯时，忽然想研究一下电梯的运作算法。根据知乎上的大佬分析，每家电梯公司的算法不同。例如知乎用户<em>董Charles</em>的答案说过，电梯的运行方向变更一次，则钢丝绳折弯次数+1。控制上不考虑方向的话，长久来说会影响钢丝绳寿命。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/03/%E5%85%B3%E4%BA%8E%E7%94%B5%E6%A2%AF%E7%AE%97%E6%B3%95%E7%9A%84%E5%B0%8F%E6%80%9D%E8%80%83/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mozzi97.github.io/2020/01/29/%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%9A%E5%B8%BD%E5%AD%90%E9%97%AE%E9%A2%98%E5%92%8C%E4%B8%89%E5%A7%AC%E5%88%86%E9%87%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Jinxiao Chen">
+      <meta itemprop="description" content="随处可见的平凡人">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mozzi的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/29/%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%9A%E5%B8%BD%E5%AD%90%E9%97%AE%E9%A2%98%E5%92%8C%E4%B8%89%E5%A7%AC%E5%88%86%E9%87%91/" class="post-title-link" itemprop="url">博弈论：帽子问题和三姬分金</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-29 07:25:29" itemprop="dateCreated datePublished" datetime="2020-01-29T07:25:29+08:00">2020-01-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-11 15:38:07" itemprop="dateModified" datetime="2020-02-11T15:38:07+08:00">2020-02-11</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="帽子问题"><a href="#帽子问题" class="headerlink" title="帽子问题"></a>帽子问题</h1><p>&emsp;&emsp;最近因为武汉肺炎的问题闲赋在家，又把金光布袋戏的九龙变看了一遍。编剧三弦惊为天人，九龙变能饱受好评三弦功不可没。在九龙变的第24集，俏如来和神蛊温皇的辩论中，提到了华罗庚的帽子问题。我本人对博弈论了解甚少，所以就帽子问题进行了自己的分析。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/29/%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%9A%E5%B8%BD%E5%AD%90%E9%97%AE%E9%A2%98%E5%92%8C%E4%B8%89%E5%A7%AC%E5%88%86%E9%87%91/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mozzi97.github.io/2019/12/15/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E4%B8%8E%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Jinxiao Chen">
+      <meta itemprop="description" content="随处可见的平凡人">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mozzi的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/15/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E4%B8%8E%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">箭头函数</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-15 18:14:20" itemprop="dateCreated datePublished" datetime="2019-12-15T18:14:20+08:00">2019-12-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-11 15:38:48" itemprop="dateModified" datetime="2020-02-11T15:38:48+08:00">2020-02-11</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/15/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E4%B8%8E%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mozzi97.github.io/2019/12/12/%E5%85%B3%E4%BA%8E%E7%A6%BB%E5%BF%83%E5%8A%9B%E4%B8%8E%E7%A7%91%E6%B0%8F%E5%8A%9B%E7%9A%84%E5%B0%8F%E7%A0%94%E7%A9%B6%208.02.14%20PM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Jinxiao Chen">
+      <meta itemprop="description" content="随处可见的平凡人">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mozzi的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/12/%E5%85%B3%E4%BA%8E%E7%A6%BB%E5%BF%83%E5%8A%9B%E4%B8%8E%E7%A7%91%E6%B0%8F%E5%8A%9B%E7%9A%84%E5%B0%8F%E7%A0%94%E7%A9%B6%208.02.14%20PM/" class="post-title-link" itemprop="url">关于离心力与科氏力的小研究</a>
         </h1>
 
         <div class="post-meta">
@@ -276,7 +519,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-16 18:34:52" itemprop="dateModified" datetime="2019-12-16T18:34:52+08:00">2019-12-16</time>
+                <time title="修改时间：2020-02-11 15:37:58" itemprop="dateModified" datetime="2020-02-11T15:37:58+08:00">2020-02-11</time>
               </span>
 
           
@@ -291,45 +534,14 @@
 
       
           <h1 id="离心机和离心力"><a href="#离心机和离心力" class="headerlink" title="离心机和离心力"></a>离心机和离心力</h1><p>&emsp;&emsp;之前偶然在B站翻阅到日本YouTuber用豆腐做刀的视频。<a href="https://www.bilibili.com/video/av70653726" target="_blank" rel="noopener">豆腐刀</a><br>&emsp;&emsp;其中使用了自制的手动离心机。因为过于震撼所以去研究了一下这个设备是如何使用的。根据弹幕的分析，这个手动离心机的运行理论和古早时期火弓钻木生火的火弓（图右）的工作理论相同。</p>
-<br>
-
-<div align=center>
-<!--div和图床之间必须有一行空格，否则不显示图片-->
-
-<p><img src="https://blog-001.west.edge.storage-yahoo.jp/res/blog-94-3a/harada34kengo/folder/700072/98/21188898/img_0?1533298995" alt="firearrow"></p>
-<center>左为左右牵引式，右为上下牵引式</center>
-</div>
-<br>
-&emsp;&emsp;当人下压横板时，会拉回绳子，从而使被绳子缠住的木棍转动起来。带动下方的重物圆盘转动，这时，重物圆盘会有一个反作用力，使得它在一个方向转动后，又向反方向转回。从而使绳子又缠回木棍上。整个行为流程使得人作上下力而木棍作左右力，让生火更加轻松。
-
-<p>&emsp;&emsp;那么为什么圆盘会向回转呢。我认为是<a href="https://www.bilibili.com/video/av61675764" target="_blank" rel="noopener">离心力</a>在工作。而促使圆盘回转的，是惯性离心力。</p>
-<blockquote>
-<p>人们对向心力、离心力、惯性离心力很容易混淆。想象一个物理学情景，一根绳子拉着小球做圆周运动，绳子给予小球的拉力F=mω^2r，给小球提供了作匀速圆周运动所必需的<strong><em>向心力</em></strong>。根据牛顿第三定律，这个力与向心力的方向相反，背离圆心，称为<strong><em>离心力</em></strong>。这个向心力和离心力是从惯性参照系来看圆周运动时所引入的两种不同概念的力。一旦绳子断掉，维持小球作圆周运动的向心力消失（离心力也同时消失），小球由于惯性，将保持原有的运动速度，沿圆周的切线方向飞去。可见，<strong><em>惯性离心力</em></strong>是从非惯性系来看力学现象而引入的一个概念，它和上述离心力的概念是完全不同的。</p>
-</blockquote>
-<center>向心力、离心力和惯性离心力的区别</center>
-
-<br>
-
-<blockquote>
-<p>我们通常是以地面做参考系，可设想地面是静止的，或者在不太长的距离中把地面运动视为匀速直线运动，即惯性参考系，牛顿就是在这样的前提下才总结出了运动定律。如果参考系是变速的，即非惯性参考系，牛顿定律就不能直接应用了，因此人们假想出了“惯性力”来解决牛顿定律的应用问题。<strong><em>惯性离心力是非惯性系中的假想力，离心力是惯性系中的真实力。</em></strong> 下面举匀速圆周运动例子：匀速圆周运动的线速度方向时刻变化，说明有向心加速度，而向心加速度方向也时刻变化，这是个典型的非惯性系。如果有个大转盘在作匀速圆周运动，你坐到盘上不要看周围景物，此时就把自己置身于非惯性系了，你肯定会感觉到有某种力量想把自己推下来，而此时又没有任何施力物推你，这种力量就称为惯性离心力。再设想这个转盘边缘有栏杆，当你靠上栏杆时会感觉自己对栏杆有推力，从地面上（惯性系）的另一观察者看来，你对栏杆施加的推力就是真实的离心力。<br><br></p>
-</blockquote>
-<h1 id="科氏力"><a href="#科氏力" class="headerlink" title="科氏力"></a>科氏力</h1><p>&emsp;&emsp;这里引入科氏力的概念。科里奥利力（Coriolis force）有些地方也称作哥里奥利力，简称为科氏力，是对旋转体系中进行直线运动的质点由于惯性相对于旋转体系产生的直线运动的偏移的一种描述。科里奥利力来自于物体运动所具有的惯性。也就是说，在非惯性参照系中，一个圆球从轴心向转动的圆盘的边缘滚去时，它总会向转动的反方向偏移。<br><br></p>
-<h1 id="科氏力与自然"><a href="#科氏力与自然" class="headerlink" title="科氏力与自然"></a>科氏力与自然</h1><p>&emsp;&emsp;<a href="https://www.bilibili.com/video/av38528705" target="_blank" rel="noopener">科氏力对自然的影响</a>有很多。例如热带与亚热带之间的信风就会被地球自转产生的科氏力所影响。</p>
-<div align=center>
-
-<p><img src="https://cn.bing.com/th?id=OIP.eIG7fHk6b-Y1esy18EGyAAHaHC&pid=Api&rs=1" alt="tradewind"></p>
-</div>
-<br>
-
-<p>&emsp;&emsp;同时，河流也会因为科氏力而更多冲刷其中一边的河岸。想象在北半球，有一条从北极一直流向赤道的河流。由于科氏力的影响，当我们以河流的流向观察时，右河岸会被冲刷得更厉害。当然，这只是理论上的结论。真实的河流会有更多的外部因素影响他的流向、冲刷力度等。</p>
-<div align=center>
-
-<p><img src="https://pic1.zhimg.com/80/v2-3e6a97e5646c0fb617f20d8175167494_hd.jpg" alt="tradewind"></p>
-</div>
-<br>
-
-<p>&emsp;&emsp;以上仅为个人好奇所做的研究探索。可能会有错误和与现实有所出入的地方。请海涵。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/12/%E5%85%B3%E4%BA%8E%E7%A6%BB%E5%BF%83%E5%8A%9B%E4%B8%8E%E7%A7%91%E6%B0%8F%E5%8A%9B%E7%9A%84%E5%B0%8F%E7%A0%94%E7%A9%B6%208.02.14%20PM/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -353,11 +565,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Jinxiao Chen">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="随处可见的平凡人">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="欢迎来到我的博客~">
+      <meta itemprop="name" content="Mozzi的博客">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -379,7 +591,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-16 16:03:28" itemprop="dateModified" datetime="2019-12-16T16:03:28+08:00">2019-12-16</time>
+                <time title="修改时间：2020-02-11 15:21:41" itemprop="dateModified" datetime="2020-02-11T15:21:41+08:00">2020-02-11</time>
               </span>
 
           
@@ -396,7 +608,7 @@
           <hr>
 <h1 id="安装npm中国镜像"><a href="#安装npm中国镜像" class="headerlink" title="安装npm中国镜像"></a>安装npm中国镜像</h1><p>&emsp;&emsp;众所周知的一些原因，npm在中国的下载速度非常之慢，这里可以下载npm的某宝镜像来解放限速。打开terminal执行以下指令即可。</p>
 <p><code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code></p>
-<br/>
+<br>
 
 <hr>
 <h1 id="更改默认作者姓名"><a href="#更改默认作者姓名" class="headerlink" title="更改默认作者姓名"></a>更改默认作者姓名</h1><p>&emsp;&emsp; 进入blog的配置文件（此处为_config.yml）后在site中更改<strong>author</strong>。需要注意的是更改完成后需要<strong>重启</strong>hexo serve。</p>
@@ -478,23 +690,33 @@
     <img class="site-author-image" itemprop="image" alt="Jinxiao Chen"
       src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Jinxiao Chen</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">随处可见的平凡人</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
         <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">标签</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Mozzi97" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Mozzi97" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/2598081640/profile?topnav=1&wvr=6" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;2598081640&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+  </div>
 
 
 
@@ -514,8 +736,8 @@
 
 <div class="copyright">
   
-  &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -541,6 +763,8 @@
   </div>
 
   
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
@@ -548,12 +772,16 @@
 <script src="/js/schemes/pisces.js"></script>
 <script src="/js/next-boot.js"></script>
 
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
 
 
   
 
 
 
+
+  <script src="/js/local-search.js"></script>
 
 
 
