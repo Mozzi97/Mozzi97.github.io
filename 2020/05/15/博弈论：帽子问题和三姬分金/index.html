@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://mozzi97.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="帽子问题&amp;emsp;&amp;emsp;最近因为新型冠状病毒的问题闲赋在家，又把金光布袋戏的九龙变看了一遍。编剧三弦惊为天人，九龙变能饱受好评三弦功不可没。在九龙变的第24集，俏如来和神蛊温皇的辩论中，提到了华罗庚的帽子问题。我本人对博弈论了解甚少，所以就帽子问题进行了自己的分析。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博弈论：帽子问题和三姬分金">
+<meta property="og:url" content="https://mozzi97.github.io/2020/05/15/%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%9A%E5%B8%BD%E5%AD%90%E9%97%AE%E9%A2%98%E5%92%8C%E4%B8%89%E5%A7%AC%E5%88%86%E9%87%91/index.html">
+<meta property="og:site_name" content="Mozzi的博客">
+<meta property="og:description" content="帽子问题&amp;emsp;&amp;emsp;最近因为新型冠状病毒的问题闲赋在家，又把金光布袋戏的九龙变看了一遍。编剧三弦惊为天人，九龙变能饱受好评三弦功不可没。在九龙变的第24集，俏如来和神蛊温皇的辩论中，提到了华罗庚的帽子问题。我本人对博弈论了解甚少，所以就帽子问题进行了自己的分析。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-14T18:20:42.000Z">
+<meta property="article:modified_time" content="2020-05-14T18:20:42.000Z">
+<meta property="article:author" content="Jinxiao Chen">
+<meta property="article:tag" content="杂谈">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://mozzi97.github.io/2020/05/15/%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%9A%E5%B8%BD%E5%AD%90%E9%97%AE%E9%A2%98%E5%92%8C%E4%B8%89%E5%A7%AC%E5%88%86%E9%87%91/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>博弈论：帽子问题和三姬分金 | Mozzi的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mozzi的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-friendlink">
+
+    <a href="/friendlink/" rel="section"><i class="fa fa-fw fa-link"></i>友链</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mozzi97.github.io/2020/05/15/%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%9A%E5%B8%BD%E5%AD%90%E9%97%AE%E9%A2%98%E5%92%8C%E4%B8%89%E5%A7%AC%E5%88%86%E9%87%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Jinxiao Chen">
+      <meta itemprop="description" content="随处可见的平凡人">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mozzi的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          博弈论：帽子问题和三姬分金
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-15 02:20:42" itemprop="dateCreated datePublished" datetime="2020-05-15T02:20:42+08:00">2020-05-15</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="帽子问题"><a href="#帽子问题" class="headerlink" title="帽子问题"></a>帽子问题</h1><p>&emsp;&emsp;最近因为新型冠状病毒的问题闲赋在家，又把金光布袋戏的九龙变看了一遍。编剧三弦惊为天人，九龙变能饱受好评三弦功不可没。在九龙变的第24集，俏如来和神蛊温皇的辩论中，提到了华罗庚的帽子问题。我本人对博弈论了解甚少，所以就帽子问题进行了自己的分析。</p>
+<a id="more"></a>
+<p>&emsp;&emsp;温皇阐述的游戏规则为下：国王对三个囚犯说，我有三张红纸和两张白纸，现在各往你们头上贴一张，你们若是能各自猜出贴纸的颜色则可以被释放。那么国王分别会贴什么纸呢？俏如来回答贴三张红纸。</p>
+<p>&emsp;&emsp;为什么俏如来能得出这样的答案呢？我们首先需要分析场上出现至少一张白纸的情况。</p>
+<ol>
+<li><p><strong><em>2白1红</em></strong></p>
+<p> 这个是最不可能的结果。我们要站在国王的角度来看这个问题，我们默认国王是不愿意让囚犯被释放的，所以他要避免颜色被猜出。当有两张白纸出现在场上时，必定有第三个人能毫不犹豫准确地猜出自己头上是红纸。所以不成立。</p>
+</li>
+<li><p><strong><em>2红1白</em></strong></p>
+<p> 当场上出现1红1白的情况下，只有两种可能性：2白1红、2红1白。如果有人能毫不犹豫地说出，说明他视野里有2白，也就是2白1红。根据1的分析，绝不可能出现2白1红，所以结果必然是2红1白。（因为没有人能果断报出2白1红，大家都在犹豫，这就断定了2白1红不存在。既然排除了1，那么答案必然是2红1白。）这也是国王必须避免的情形。</p>
+</li>
+</ol>
+<p>综上可述，国王必定贴3红。</p>
+<p>&emsp;&emsp;逻辑真是一种可以相通的趣事。这个“必然可能性排除法”我也同样用在数独里。例如至上到下3个九宫格，其中九宫格1和九宫格2的前两列存在数字3的可能性，那么九宫格3的数字3必然在第三列上。有时候不需要确切的数字来进行准确的推测，而是通过确切的可能性来推测下一个正确的可能性。</p>
+<br>
+
+<h1 id="三姬分金"><a href="#三姬分金" class="headerlink" title="三姬分金"></a>三姬分金</h1><p>&emsp;&emsp;三个人分一百金币，但是要通过一个游戏。每个人依次提一个建议，未通过半数以上投票（半数以上不包括半数）就会被处死。如果A死了，B必死。所以无论如何B都会支持A的提议，A也知道结果是这样。所以A要想利益最大化，就拿一百。其余两个人拿0。</p>
+<p>&emsp;&emsp;在此基础上，增加一个大王M，大王觉得这个游戏有意思，在A之前提议。这时M已然明白如果自己被票死A会威胁B最终获得100枚金币，所以他会选择方案中对B和C示好，即M分98，A分0，B分1，C分1。B和C明白如果M被票死，就回到了第一个游戏模型，A一定会拿走所有的金币，但至少M还分给了自己1枚金币，所以综合考量一定会支持M的提议。</p>
+<p>&emsp;&emsp;这个模型比较理想化，而且是赌命，容不得半点意气。如果B和C串谋最后C反悔，B毫无办法。但现实生活中，这样的类似博弈无处不在，而且有很多背叛以后再修复关系反复经营的操作，成本越低串谋的几率就越大。</p>
+<p>&emsp;&emsp;其中M具有先发优势，能够最大程度为自己谋取利益，B和C代表低端群体，容易被打压和剥削，但同样能用小的利益换得同盟赢取支持。而A的位置处在夹层，并不是领导阶层的拉拢对象，虽有野心，但M虎视眈眈，只能伺机策反B和C然后废掉M取而代之获得先发优势。<br>这样的模型给了我几点小的启示，第一，如果为了最大的利益一定要去争取先发优势，制定规则的人才能攥住最大的利润。第二，身处A的位置，一方面要取得M的信任，另一方面需要完善的合约以牵制B和C，如果M心怀不轨，则可以联合B和C，不至于太被动，最后，身处低端，不能自甘堕落，争取缩短阶级差距，还要学会利用上层的角力为自己谋取利益充实自己的实力。</p>
+<p>&emsp;&emsp;如果M之前再多一个K，假设K被处死，那么M获得最大利益。为了避免出现这种情况，K在5人中必须获得3个支持票。那么除了K自己，剩下两票应该找谁呢？我认为还是得找B,C，而且开价必须比M要高。假设K被处死，M为了获利会联合B,C，B,C只能获得1枚金币的利益。如果处死M，那么A获利，B,C获利的可能性更小。所以说K为了胜出，必须和B,C合作，因为他们是利益链最下方的人，不管是K处死，M处死，他们得到的利益都是最晚最少的。（为什么不和M、A合作？因为他们是利益链的第二者第三者，或许他们愿意处死K来让自己利益最大化）所以和他们合作最方便，因为他们永远是被动的。</p>
+<p>&emsp;&emsp;以此类推，如果K之前再出现J加入游戏（6人），那么为了获取4票通过权，J也必须巴结A,B,C，因为他们是利益最低端，轮次太低，所以好巴结。引申到社会问题，当顶头上司出现竞争者的时候，下属员工或许有了站队结帮的权利，这时候你可以要求更多的利益。但是注意不要过于贪婪，如果你站队的上司倒了或者失去依附，那么你依旧回到被剥削的地位。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9D%82%E8%B0%88/" rel="tag"># 杂谈</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/15/%E5%85%B3%E4%BA%8E%E7%A6%BB%E5%BF%83%E5%8A%9B%E4%B8%8E%E7%A7%91%E6%B0%8F%E5%8A%9B%E7%9A%84%E5%B0%8F%E7%A0%94%E7%A9%B6/" rel="prev" title="关于离心力与科氏力的小研究">
+      <i class="fa fa-chevron-left"></i> 关于离心力与科氏力的小研究
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/15/%E5%85%B3%E4%BA%8E%E7%94%B5%E6%A2%AF%E7%AE%97%E6%B3%95%E7%9A%84%E5%B0%8F%E6%80%9D%E8%80%83/" rel="next" title="关于电梯算法的小思考">
+      关于电梯算法的小思考 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#帽子问题"><span class="nav-number">1.</span> <span class="nav-text">帽子问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三姬分金"><span class="nav-number">2.</span> <span class="nav-text">三姬分金</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jinxiao Chen"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Jinxiao Chen</p>
+  <div class="site-description" itemprop="description">随处可见的平凡人</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Mozzi97" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Mozzi97" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/2598081640/profile?topnav=1&wvr=6" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;2598081640&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jinxiao Chen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
